@@ -34,7 +34,7 @@ def groupDecryptedMessage(messageSeperater, line):
             rowOfFirstLetter=rowOfFirstLetter-1
             rowOfSecondLetter=rowOfSecondLetter-1
             if rowOfFirstLetter==0:
-                rowOfSecondLetter=5
+                rowOfFirstLetter=5
             if rowOfSecondLetter==0:
                 rowOfSecondLetter=5
         else: 
@@ -46,7 +46,6 @@ def groupDecryptedMessage(messageSeperater, line):
         indexOfSecondLetter=int((rowOfSecondLetter-1)*5+columnOfSecondLetter-1)
         index+=2
         decryptedFirstLetter=line[indexOfFirstLetter]
-        print('indexOfFirstLetter'+str(indexOfFirstLetter))
         decryptedSecondLetter=line[indexOfSecondLetter]
         messageDecrypted+=decryptedFirstLetter+decryptedSecondLetter
     return messageDecrypted
