@@ -63,7 +63,8 @@ def groupEncryptedMessage(messageSeperater, line):
         else:
             secondLetter='x'
         if (firstLetter==secondLetter):
-            secondLetter='x'
+            messageSeperater.insert(index+1,'x')
+            secondLetter=messageSeperater[index+1]
         rowOfFirstLetter=defineRow(line.index(firstLetter))
         columnOfFirstLetter=defineColumn(line.index(firstLetter))
         rowOfSecondLetter=defineRow(line.index(secondLetter))
