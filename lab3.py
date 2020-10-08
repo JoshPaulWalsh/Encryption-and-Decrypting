@@ -1,9 +1,13 @@
+#Joshua Walsh jpw273@nau.edu
+#Adam Montano ajm2327@nau.edu
+
 def decryptMessage(key,message):
     keySeperater=list(key)
     messageSeperater=list(message)
     line=createLine(keySeperater)
     finalDecryptedMessage=groupDecryptedMessage(messageSeperater,line)
     return finalDecryptedMessage
+#This will call the key message with each value seperated into an array, it will do the same for message, it calls line in order to create the array of letters and     removes duplicates, it then proceeds to make the variable finalDecryptedMessage which is the encrypted message that they input decrypted, and it returns that variable  in order to use it in main.
 
 def encryptMessage(key,message):
     keySeperater=list(key)
@@ -11,7 +15,7 @@ def encryptMessage(key,message):
     line=createLine(keySeperater)
     finalEncryptedMessage=groupEncryptedMessage(messageSeperater,line)
     return finalEncryptedMessage
-
+#This will do the same as decryptMessage except the message returned is encrypted instead of decrypted
 
 def groupDecryptedMessage(messageSeperater, line):
     index=0
@@ -49,7 +53,7 @@ def groupDecryptedMessage(messageSeperater, line):
         decryptedSecondLetter=line[indexOfSecondLetter]
         messageDecrypted+=decryptedFirstLetter+decryptedSecondLetter
     return messageDecrypted
-    
+#The groupDecryptedMessage sorts the array into a decryptable string and decrypts the message
 
 def groupEncryptedMessage(messageSeperater, line):
     index=0
@@ -94,18 +98,23 @@ def groupEncryptedMessage(messageSeperater, line):
         encryptedSecondLetter=line[indexOfSecondLetter]
         messageEncrypted+=encryptedFirstLetter+encryptedSecondLetter
     return messageEncrypted 
+#The groupEncryptedMessage does the same as the groupDecryptedMessage except for converting the array into an encrypted message
+
         
 def createLine(keySeperater):
     alphabet=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','r','s','t','v','w','x','y','z',' ']
     array=keySeperater+alphabet
     array= list(dict.fromkeys(array))
     return array
+#Creates an array that resembles the box for our playfair cipher and eliminates duplicates
 
 def defineRow(index):
     return int(index/5)+1
+#defineRow function sorts the variables into hypothetical rows
 
 def defineColumn(index):
     return int(index%5)+1
+#defineColumn function sorts the variables into hypothetical columns
 
 print('Would you like to: ')
 print('(1) encrypt')
